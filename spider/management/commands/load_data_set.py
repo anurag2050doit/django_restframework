@@ -1,16 +1,11 @@
 # Created by anmisra on 9/22/18
 
-from csv import DictReader
-from datetime import datetime
-
-from django.core.management import BaseCommand
 from django.contrib.auth.models import User
+from django.core.management import BaseCommand
 
 from services import models
-
-from spider.models import ApiKeys
-from pytz import UTC
 from spider.get_data import FetchData
+from spider.models import ApiKeys
 
 
 class Command(BaseCommand):
