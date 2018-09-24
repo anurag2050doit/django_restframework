@@ -11,7 +11,11 @@ class Photos(models.Model):
     description = models.TextField()
     urls = models.URLField()
     media = models.CharField(max_length=50)
-    group = models.ForeignKey('Group', on_delete=models.CASCADE, blank=True)
+    group = models.ForeignKey('Group', on_delete=models.CASCADE, blank=True,
+                              related_name='photos')
+
+    def __unicode__(self):
+        return '%d. %s' % (self.pk, self.title)
 
 
 class Group(models.Model):
@@ -24,4 +28,4 @@ class Group(models.Model):
 class Tags(models.Model):
     author = models.ForeignKey('auth.User')
     content = models.CharField(max_length=500)
-    photo = models.ForeignKey('Photos')
+    photo = models.ForeignKey('Photos', related_name='tags')

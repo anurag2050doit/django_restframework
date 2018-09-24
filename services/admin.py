@@ -2,5 +2,8 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from services import models
 
-# Register your models here.
+admin.register(models.Group)
+admin.register(models.Photos)
+admin.register(models.Tags)

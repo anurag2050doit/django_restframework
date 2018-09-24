@@ -20,7 +20,7 @@ class Command(BaseCommand):
                 group_response = self.get_response(api)
         if group_response:
             user = User.objects.get(first_name='Guest')
-            group = models.Group.objects.get(id=1)
+            group = models.Group.objects.get(id=5)
             for photo in group_response.get('photos', {}).get('photo', []):
                 photo_id = photo.get('id')
                 if photo_id:

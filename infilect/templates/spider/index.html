@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Installation{% endblock %}
+
+{% block content %}
+<h1>Installation Guide</h1>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-primary">- Install Virtualenv <code>pip install virtualenv</code></li>
+    <li class="list-group-item list-group-item-primary">- Create virtualenv <code>virtualenv env</code></li>
+    <li class="list-group-item list-group-item-primary">- Activate Virtualenv <code>source env/bin/activate</code></li>
+    <li class="list-group-item list-group-item-primary">- Install Dependencies <code>pip install -r requirements.txt</code></li>
+</ul>
+<h1>Run Project</h1>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-primary">- Index Data form Flickr API <code>python manage.py load_data_set</code>
+        &emsp;|<font color="red">Guide:</font><small>This will connect to Flickr Using API key and URL's saved in DB to download data and index into DB</small>
+    </li>
+    <li class="list-group-item list-group-item-primary">- URI: /api/v1/login/
+        &emsp;|<font color="red">Guide:</font><small>&nbsp;This will Create Token for further Requests</small>
+    </li>
+    <li class="list-group-item list-group-item-primary">- URI: /api/v1/groups/
+        &emsp;|<font color="red">Guide:</font><small>&nbsp;Return all the groups that below to the user</small>
+    </li>
+    <li class="list-group-item list-group-item-primary">- URI: /api/v1/group/ID
+        &emsp;|<font color="red">Guide:</font><small>&nbsp;Return all the photos belonging to the group</small>
+    </li>
+    <li class="list-group-item list-group-item-primary">- URI: /api/v1/photos/ID
+        &emsp;|<font color="red">Guide:</font><small>&nbsp;Return details of the Photo</small>
+    </li>
+</ul>
+{% endblock %}
+
